@@ -1,0 +1,92 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: olive-gateway-server    
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: olive-auth-service
+          uri: lb://olive-auth-server
+          predicates:
+            - Path=/api/olive/1.0/doLogin
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/doLogin, /api/v1/olive-login
+
+        - id: olive-foundation-service
+          uri: lb://olive-foundation-server
+          predicates:
+            - Path=/api/olive/1.0/foundation/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/foundation/(?<segment>/?.*), /$\{segment}
+
+        - id: olive-real-estate-service
+          uri: lb://real-estate-server
+          predicates:
+            - Path=/api/olive/1.0/realEstate/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/realEstate/(?<segment>/?.*), /$\{segment}
+
+        - id: olive-crm-service
+          uri: lb://crm-server
+          predicates:
+            - Path=/api/olive/1.0/crm/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/crm/(?<segment>/?.*), /$\{segment}
+
+        - id: olive-kloud-kichn-service
+          uri: lb://kloud-kichn-server
+          predicates:
+            - Path=/api/olive/1.0/kloudKichn/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/kloudKichn/(?<segment>/?.*), /$\{segment}
+
+
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: "http://localhost:7071/.well-known/jwks.json"
+          
+#eureka:
+#  client:
+#    region: default
+#    registry-fetch-interval-seconds: 5
+#    service-url:
+#      defaultZone: http://localhost:7074/eureka/
+      
+#logging:
+#  level:
+#    root: trace    
+
+#spring:
+#  cloud:
+#    gateway:
+#      httpclient:
+#        wiretap: true
+#      httpserver:
+#        wiretap: true
+
+logging:
+  level:
+    reactor:
+      netty: DEBUG
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG      
+  file:
+    name: ./logs/olive-gateway-server.log
+    
+

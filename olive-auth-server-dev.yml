@@ -1,0 +1,46 @@
+server:
+  port: 7071
+
+olive-client:
+  client-id: olive@carmelsolutions
+  client-secret: P@ssw0rd
+  auth-end-point: /api/v1/olive-login
+
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:7074/eureka/
+
+spring:
+  application:
+    name: olive-auth-server
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/olive?createDatabaseIfNotExist=true&useLegacyDatetimeCode=false
+    username: root
+    password: P@ssw0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+
+  jpa:
+    hibernate:
+#      properties:
+#        jdbc:
+#          time_zone: UTC    
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+logging:
+#  level:
+#    root: trace
+
+  file:
+    name: ./logs/olive-auth-server.log
