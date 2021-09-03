@@ -1,0 +1,48 @@
+# Move this to user profile. Fetch the locale from user preference rather than this config
+olive-locale:
+  user-timezone: Asia/Calcutta
+
+olive:
+  application:
+    name: "Olive" # This will be used for printing the application name in the front end (e.g. html page title)
+
+two-factor:
+  api-key: b3d3355a-199a-11eb-b380-0200cd936042
+  sandbox-otp: 12345
+  # templates:
+    # phone-onboarding: olive-phone-onboarding
+    # forgot-password: olive-forgot-password
+
+
+auth:
+  org-id: "c79ecc86-20b7-44b2-ab70-3db893e37725"
+  client-id: "olive@carmelsolutions"
+  grant-type: "password"
+  
+upload-path:
+  profile-pic-path: /Users/ronaldphilip/olive-uploads
+
+spring:
+  security:
+    user:
+      name: root
+      password: P@ssw0rd
+
+logging:
+  level:
+    root: info
+    #org:
+      #hibernate:
+        #type: info
+        #SQL: debug
+    com:
+      carmel:
+        olive: trace
+
+  pattern:
+    console: '%d{"yyyy/MM/dd HH:mm:ss,SSS"} [%p] [%t] %M\(%F:%L\) - %msg%n'
+
+  logback:
+    rollingpolicy:
+      clean-history-on-start: false
+      max-file-size: 5MB
