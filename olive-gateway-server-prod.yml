@@ -1,7 +1,7 @@
 server:
   port: 7070
   ssl:
-    key-store: file:///etc/apache2/ssl/ssl-tomcat/gfkblr.in/gfkblr.p12
+    key-store: classpath:/gfkblr.in/gfkblr.p12
     key-store-password: P@ssw0rd
     key-store-type: pkcs12
     key-alias: gfkblr
@@ -9,7 +9,9 @@ server:
 
 spring:
   application:
-    name: olive-gateway-server    
+    name: olive-gateway-server 
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/etc/apache2/ssl/ssl-tomcat/
   cloud:
     gateway:
       discovery:
