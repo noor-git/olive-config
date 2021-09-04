@@ -1,6 +1,11 @@
 server:
   port: 7076
-
+  ssl:
+    key-store: file:/gfkblr.p12
+    key-store-password: P@ssw0rd
+    key-store-type: pkcs12
+    key-alias: gfkblr.in
+    key-password: P@ssw0rd
 spring:
   application:
     name: kloud-kichn-server
