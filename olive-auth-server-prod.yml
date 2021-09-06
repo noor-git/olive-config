@@ -1,13 +1,13 @@
 server:
   port: 7071
-  ssl:
-    key-store: file:/gfkblr.p12
-    key-store-password: P@ssw0rd
-    key-store-type: pkcs12
-    key-alias: gfkblr.in
-    key-password: P@ssw0rd
-    trust-store: file:/gfkblr.p12
-    trust-store-password: P@ssw0rd
+#   ssl:
+#     key-store: file:/gfkblr.p12
+#     key-store-password: P@ssw0rd
+#     key-store-type: pkcs12
+#     key-alias: gfkblr.in
+#     key-password: P@ssw0rd
+#     trust-store: file:/gfkblr.p12
+#     trust-store-password: P@ssw0rd
 olive-client:
   client-id: olive@carmelsolutions
   client-secret: P@ssw0rd
@@ -18,7 +18,7 @@ eureka:
     region: default
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: https://gfkblr.in:7074/eureka/
+      defaultZone: http://gfkblr.in:7074/eureka/
 
 spring:
   application:
