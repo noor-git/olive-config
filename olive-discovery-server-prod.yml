@@ -17,8 +17,8 @@ eureka:
     hostname: localhost
   client:
     serviceUrl: 
-      #defaultZone: http://localhost:7074/eureka/
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: https://localhost:7074/eureka/
+#       defaultZone: https://${eureka.instance.hostname}:${server.port}/eureka/
     register-with-eureka: false
     fetch-registry: false
     
