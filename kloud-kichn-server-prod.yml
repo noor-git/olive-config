@@ -1,13 +1,13 @@
 server:
   port: 7076
-  ssl:
-    key-store: file:/gfkblr.p12
-    key-store-password: P@ssw0rd
-    key-store-type: pkcs12
-    key-alias: gfkblr.in
-    key-password: P@ssw0rd
-    trust-store: file:/gfkblr.p12
-    trust-store-password: P@ssw0rd
+#   ssl:
+#     key-store: file:/gfkblr.p12
+#     key-store-password: P@ssw0rd
+#     key-store-type: pkcs12
+#     key-alias: gfkblr.in
+#     key-password: P@ssw0rd
+#     trust-store: file:/gfkblr.p12
+#     trust-store-password: P@ssw0rd
 spring:
   application:
     name: kloud-kichn-server
@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: "https://gfkblr.in:7071/.well-known/jwks.json"
+          jwk-set-uri: "http://gfkblr.in:7071/.well-known/jwks.json"
 
 # &serverTimezone=UTC
   datasource:
