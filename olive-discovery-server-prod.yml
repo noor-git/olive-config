@@ -1,13 +1,13 @@
 server:
   port: 7074
-  ssl:
-    key-store: file:/gfkblr.p12
-    key-store-password: P@ssw0rd
-    key-store-type: pkcs12
-    key-alias: gfkblr.in
-    key-password: P@ssw0rd
-    trust-store: file:/gfkblr.p12
-    trust-store-password: P@ssw0rd
+#   ssl:
+#     key-store: file:/gfkblr.p12
+#     key-store-password: P@ssw0rd
+#     key-store-type: pkcs12
+#     key-alias: gfkblr.in
+#     key-password: P@ssw0rd
+#     trust-store: file:/gfkblr.p12
+#     trust-store-password: P@ssw0rd
 spring:
   application:
     name: olive-discovery-server
@@ -18,7 +18,7 @@ eureka:
   client:
     serviceUrl: 
 #       defaultZone: https://gfkblr.in:7074/eureka/
-      defaultZone: https://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     register-with-eureka: false
     fetch-registry: false
     
