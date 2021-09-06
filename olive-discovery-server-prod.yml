@@ -6,8 +6,8 @@ server:
     key-store-type: pkcs12
     key-alias: gfkblr.in
     key-password: P@ssw0rd
-#     trust-store: file:/gfkblr.p12
-#     trust-store-password: P@ssw0rd
+    trust-store: file:/gfkblr.p12
+    trust-store-password: P@ssw0rd
 spring:
   application:
     name: olive-discovery-server
