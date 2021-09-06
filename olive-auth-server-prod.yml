@@ -18,7 +18,7 @@ eureka:
     region: default
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://gfkblr.in:7074/eureka/
+      defaultZone: https://gfkblr.in:7074/eureka/
 
 spring:
   application:
