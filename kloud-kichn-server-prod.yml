@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: "https://165.22.217.19:7071/.well-known/jwks.json"
+          jwk-set-uri: "https://gfkblr.in:7071/.well-known/jwks.json"
 
 # &serverTimezone=UTC
   datasource:
