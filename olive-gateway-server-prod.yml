@@ -60,6 +60,14 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/api/olive/1.0/kloudKichn/(?<segment>/?.*), /$\{segment}
+            
+        - id: olive-electronic-forms-service
+          uri: lb://electronic-forms-server
+          predicates:
+            - Path=/api/olive/1.0/electronicForms/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/olive/1.0/electronicForms/(?<segment>/?.*), /$\{segment}
 
 
 #  security:
