@@ -1,12 +1,12 @@
 server:
   port: 7070
-  ssl:
-    enabled: true
-    key-store: file:/gfkblr.p12
-    key-store-password: P@ssw0rd
-    key-store-type: pkcs12
-    key-alias: gfkblr.in
-    key-password: P@ssw0rd
+#   ssl:
+#     enabled: true
+#     key-store: file:/gfkblr.p12
+#     key-store-password: P@ssw0rd
+#     key-store-type: pkcs12
+#     key-alias: gfkblr.in
+#     key-password: P@ssw0rd
 
 spring:
   application:
