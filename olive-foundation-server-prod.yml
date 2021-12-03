@@ -28,8 +28,8 @@ spring:
 # &serverTimezone=UTC
   datasource:
     url: jdbc:mysql://165.22.217.19:3306/olive?createDatabaseIfNotExist=true&useLegacyDatetimeCode=false
-    username: root
-    password: c@rmel@KK1chn
+    username: carmel
+    password: P@ssw0rd
     driver-class-name: com.mysql.cj.jdbc.Driver
     initialization-mode: always
 
